@@ -3,7 +3,43 @@ from django.db import models
 
 class Schoolkid(models.Model):
     """Ученик."""
-    full_name = models.CharField('ФИО', max_length=200)
+    full_name = models.CharField('Акулов Николай Ильич', max_length=200)
+    birthday = models.DateField('день рождения', null=True)
+
+    entry_year = models.IntegerField('год начала обучения', null=True)
+    year_of_study = models.IntegerField('год обучения', null=True)
+    group_letter = models.CharField('литера класса', max_length=1, blank=True)
+
+    def __str__(self):
+        return f'{self.full_name} {self.year_of_study}{self.group_letter}'
+    
+    class Schoolkid(models.Model):
+    """Ученик."""
+    full_name = models.CharField('Арапов Никита Романович', max_length=200)
+    birthday = models.DateField('день рождения', null=True)
+
+    entry_year = models.IntegerField('год начала обучения', null=True)
+    year_of_study = models.IntegerField('год обучения', null=True)
+    group_letter = models.CharField('литера класса', max_length=1, blank=True)
+
+    def __str__(self):
+        return f'{self.full_name} {self.year_of_study}{self.group_letter}'
+    
+    class Schoolkid(models.Model):
+    """Ученик."""
+    full_name = models.CharField('Богатова Анастасия Сергеевна', max_length=200)
+    birthday = models.DateField('день рождения', null=True)
+
+    entry_year = models.IntegerField('год начала обучения', null=True)
+    year_of_study = models.IntegerField('год обучения', null=True)
+    group_letter = models.CharField('литера класса', max_length=1, blank=True)
+
+    def __str__(self):
+        return f'{self.full_name} {self.year_of_study}{self.group_letter}'
+    
+    class Schoolkid(models.Model):
+    """Ученик."""
+    full_name = models.CharField('Быстров Егор Васильевич', max_length=200)
     birthday = models.DateField('день рождения', null=True)
 
     entry_year = models.IntegerField('год начала обучения', null=True)
@@ -16,7 +52,7 @@ class Schoolkid(models.Model):
 
 class Teacher(models.Model):
     """Учитель."""
-    full_name = models.CharField('ФИО', max_length=200)
+    full_name = models.CharField('Шишкина Оксана Александровна', max_length=200)
     birthday = models.DateField('день рождения', null=True)
 
     def __str__(self):
@@ -25,7 +61,7 @@ class Teacher(models.Model):
 
 class Subject(models.Model):
     """Предмет: математика, русский язык и пр. — привязан к году обучения."""
-    title = models.CharField('название', max_length=200)
+    title = models.CharField('7Д', max_length=200)
     year_of_study = models.IntegerField(
         'год обучения', null=True, db_index=True,
     )
